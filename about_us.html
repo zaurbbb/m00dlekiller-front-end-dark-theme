@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title id="version">Moodle Killer</title>
+
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="images/light_icon.ico?">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--CSS (ваще пох что external не юзаем) AND FONT-AWESOME-->
+    <link rel="stylesheet" type="text/css" href="moodlekiller.css" >
+    <script src="https://kit.fontawesome.com/05a12f98dd.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="font-awesome.min.css">
+
+    <!--FONTS-->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+
+    <!--BOOTSTRAP5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <!--JQUERY-->
+    <script src="jquery-3.6.0.min.js"></script>
+
+    <!--INTERNAL CSS-->
+    <style>
+        a{
+            text-decoration: none;
+        }
+        fieldset{
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+        }
+
+        legend{
+            width:inherit;
+            padding:0 10px;
+            border-bottom:none;
+            float: none;
+            margin-bottom: -10px;
+            font-size: 14px;
+            border-right: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+        tr, td{
+            height: 50px;
+            color: black;
+        }
+        table{
+            width: 100%;
+        }
+        thead, th{
+            font-weight: 600;
+
+        }
+
+        .col-n1 {width: 4%;}
+        .col-n11 {width: 96%;}
+    </style>
+
+</head>
+
+<body>
+
+<!--NAVBAR-->
+<div id="app">
+    <nav class="navbar navbar-expand-md navbar-light shadow-sm">
+        <div class="container-fluid">
+
+            <a class="navbar-item ms-2 me-3 my-auto" href="mk_grades.html">
+                <button class="courses_txt">
+                    Courses
+                </button>
+            </a>
+
+            <!--LEFT SIDE OF NAVBAR-->
+            <div class="collapse navbar-collapse" >
+                <!--LOGO AND TEXT MOODLE KILLER-->
+                <ul class="navbar-nav mx-2 py-lg-0 py-sm-2  ">
+                    <li class="nav-item">
+
+                        <a href="index.html" class="navbar-brand">
+
+
+                                <span class="logo d-none d-sm-inline">
+                                <img id="moodle_logo" width="30" height="35" src="https://i.ibb.co/R21LxRF/dark-logo.png" alt="Astana IT University">
+                                </span>
+                            <span class="mt-5 fs-6" style="font-family: 'Nunito', sans-serif;
+                                ">
+                                MoodleKiller Project
+                                </span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!--LANGUAGE-->
+                <ul class="navbar-nav mx-2 me-2 py-lg-0 py-sm-2  ">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+                            Language
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li onclick="pushUpMessage()">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fa fa-globe fa-fw"></i> English
+                                </a>
+                            </li>
+                            <li onclick="pushUpMessage()">
+                                <a class="dropdown-item " href="#">
+                                    <i class="fa fa-language fa-fw"></i> Russian
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!--THEME-->
+                <ul class="navbar-nav mx-2 me-auto py-lg-0 py-sm-2  ">
+                    <li class="nav-item">
+                        <a class=" courses_txt" href="#" onclick="themeToggle()" data-bs-toggle="dropdown"
+                           style="padding-bottom: 6px; padding-top: 5px">
+                            Change theme
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ms-auto">
+                    <!-- Authentication Links -->
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span class="my-auto link-primary fs-6  ">Zaur Berdibekov</span>
+                            <img class="my-0 mx-1 rounded-circle" width="25px" height="25px" src="https://i.pinimg.com/originals/1f/de/c9/1fdec9d0c4d8754be744a44bb2d27a18.png" alt="">
+                        </a>
+
+                        <ul class="dropdown-menu dropdown-menu-end text-start"  aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" href="mk_profile.html">
+                                    <div class="container">
+                                        <i class="fa fa-user me-1"></i>
+                                        Profile
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#" onclick="pushUpMessage()">
+                                    <div class="container">
+                                        <i class="fa fa-cog me-1"></i>
+                                        Settings
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="mk_reg.html">
+                                    <div class="container">
+                                        <i class="fa fa-sign-out me-1"></i>
+                                        Logout
+                                    </div>
+                                </a>
+
+                            </li>
+                        </ul>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</div>
+
+<!--INFO-->
+<style>
+    .images{
+        height: 100px;
+        width: 100px;
+    }
+    fieldset{
+        border: none;
+    }
+</style>
+<br>
+<div style="margin: 30px;">
+
+    <div class="row " style="  display: flex;
+                                   align-items: center;
+                                    justify-content: center">
+
+        <!--PROFILE-->
+        <div class="col-6">
+            <br>
+            <br>
+
+            <div class="col-12 px-2 ">
+                <!--google maps api-->
+                <div class="text-center py-auto mx-auto">
+                    <iframe width="500"
+                            height="500"
+                            style="margin-top: -40px;"
+                            loading="lazy"
+                            allowfullscreen
+                            src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJBVZSBaaFRUIRflb3cxlK_00&key=
+                                AIzaSyCkWqkS3TCxqPgzNO1fq6F_xDqxEmJNBpM"></iframe>
+
+
+                </div>
+            </div>
+        </div>
+
+        <!--USER DETAILS-->
+        <div class="col-5 float-right">
+            <fieldset class="px-2 py-2 mb-5">
+                <div id="">
+                    <div class="row d-flex text-center">
+                        <div class="col-3">
+                            <img class="images rounded border" src="https://sun1.dataix-kz-akkol.userapi.com/impf/NYufKyTh6AuOfLACl_1DwNesXxPUfGY3LYLD_w/6BnbfWEjFAY.jpg?size=640x640&quality=96&sign=8e4368ad7dfa34e4c66dd716c90eb4a4&type=album" style="z-index: 1" >
+                        </div>
+                        <div class="col-8 pt-2">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex"><a>Zaur Berdibekov</a></li>
+                                <li class="list-group-item d-flex">Full-Stack Developer</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="px-2 py-2 mb-5">
+                <div >
+                    <div class="row d-flex text-center">
+                        <div class="col-3">
+                            <img class="images rounded border" src="https://sun9-87.userapi.com/impf/hXOHdjIZnTrEo3NNuK3aBII4CRy-NSUmTnDEsg/5Qb98pjhNLQ.jpg?size=640x640&quality=96&sign=919edb211f86f8a916b951165364ecd6&type=album" style="z-index: 1" >
+                        </div>
+                        <div class="col-8 pt-2">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex"><a>Umar Musa</a></li>
+                                <li class="list-group-item d-flex">Mobile & Back-end Developer</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="px-2 py-2 mb-5">
+                <div id="user_details">
+                    <div class="row d-flex text-center">
+                        <div class="col-3">
+                            <img class="images rounded border" src="https://sun9-86.userapi.com/impf/9aw3yqHezzRDVuzRzUjt82X392uilFoMsjX8PQ/ksc0TMcG1z0.jpg?size=640x640&quality=96&sign=a81f085956577d544f116610f90eb443&type=album" style="z-index: 1" >
+                        </div>
+                        <div class="col-8 pt-2">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex"><a>Akniet Baibolat</a></li>
+                                <li class="list-group-item d-flex">UX/UI Designer</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+
+
+
+    </div>
+
+
+
+
+</div>
+<br>
+<br>
+<!--FOOTER-->
+<div class="footer" style="width: 100%">
+
+    <footer class="container-fluid text-center p-3 disabled text-muted " style="">
+        <div class="text-center">
+            <a href="about_us.html" target="_blank" class="footerlink">
+                <i class="fa fa-external-link-square fa-2x mx-2"></i>
+            </a>
+            <a href="https://www.instagram.com/astana_it_university/" target="_blank"  class="footerlink"><i class="fa fa-instagram  fa-2x mx-2"></i></a>
+            <a href="https://www.youtube.com/channel/UCRUN152kvKPdLiYvcpOyFkQ" target="_blank"  class="footerlink"><i class="fa fa-youtube-square  fa-2x mx-2"></i></a>
+            <a href="https://t.me/ait2u" target="_blank"  class="footerlink"><i class="fa fa-telegram  fa-2x mx-2"></i></a>
+            <a href="https://www.facebook.com/astanaituniversity" target="_blank" class="footerlink"><i class="fa fa-facebook-square  fa-2x mx-2"></i></a>
+
+        </div>
+
+    </footer>
+
+    <!--UNDER FOOTER-->
+
+    <footer class="container-fluid text-center p-3 disabled text-muted " id="phrase"
+            style="word-break: break-all">
+        Created by:
+        <a href='https://t.me/lagmazavr' class='link-secondary' target='_blank'> <i class='fa fa-telegram '></i>
+            lagmazavr </a>
+
+        <wbr/>
+        +
+        <a href='https://t.me/bioneis' class='link-secondary' target='_blank'><i class='fa fa-telegram '></i> bioneis
+        </a>
+        <wbr/> + <a href='https://t.me/Qolymnan_usta' class='link-secondary' target='_blank'><i class='fa fa-telegram '></i> Qolymnan_usta </a>
+
+    </footer>
+    <!--SNACKBAR-->
+    <fieldset id="snackbar">
+        <legend id="wText" class="float-none w-auto text-center">
+            Message
+        </legend>
+        This function isn't available yet.
+    </fieldset>
+</div>
+
+<audio id="sound" src="wind_sound.wav"></audio>
+
+<script src="moodlekiller.js"></script>
+<script src="profile_edit.js"></script>
+</body>
+</html>
