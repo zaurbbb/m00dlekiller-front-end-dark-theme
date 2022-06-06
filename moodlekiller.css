@@ -187,6 +187,9 @@ tr td:first-child{
 tr:last-child td{
     border-bottom: none;
 }
+.schedule_table tr td{
+    width: 200px;
+}
 #favicon{
     content: url("");
 }

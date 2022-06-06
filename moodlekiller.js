@@ -15,8 +15,8 @@ $( '.subj:eq(4)' ).html("Coding Lab | Meruyert Nurgazy" );
 $( '.subj:eq(5)' ).html("Physical Culture 3 | Askapov Sarzhan" );
 
 //name of subjects in the grades page
-$( '.gas:eq(0)' ).html("Professional English | Ainur Bakenova");
-$( '.gas:eq(13)' ).html("Professional English | Ainur Bakenova");
+$( '.gas:eq(0)' ).html("Foreign Language 2 (English) | Assel Salkenova");
+$( '.gas:eq(13)' ).html("Foreign Language 2 (English) | Assel Salkenova");
 
 $( '.gas:eq(1)' ).html("WEB Technologies 1 (Front End) | Yegemberdiyeva Gulzhan");
 $( '.gas:eq(14)' ).html("WEB Technologies 1 (Front End) | Yegemberdiyeva Gulzhan");

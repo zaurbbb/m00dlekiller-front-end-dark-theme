@@ -150,7 +150,7 @@
 
             <ul class="dropdown-menu dropdown-menu-end text-start"  aria-labelledby="navbarDropdown">
               <li>
-                <a class="dropdown-item" href="/mk_profile.html">
+                <a class="dropdown-item" href="mk_profile.html">
                   <div class="container">
                     <i class="fa fa-user me-1"></i>
                     Profile
@@ -189,7 +189,7 @@
 </div>
 
 <!--INFO-->
-<div style="margin: 30px">
+<div style="">
 
   <div class="row">
 
@@ -200,16 +200,15 @@
 
       <div class="col-12 px-2">
         <!--AVA-->
-        <div class="text-center">
-          <a href="#">
-            <img src="images/settings.ico"  data-bs-toggle="modal" data-bs-target="#avaModal" style="position: absolute; z-index: 2; margin: 180px 180px" height="16"
-                 width="16">
-          </a>
-          <img class=" rounded border" src="images/profileAva.jpg" style="z-index: 1" height="205" width="205">
-        </div>
-        <br>
+        <a class="text-center" href="/add-image">
+          @yield('ava')
 
-        <p class="fs-3 lead text-center" id="full_name">NAME SURNAME</p>
+        </a>
+        <br><br>
+
+        <p class="fs-3 lead text-center" id="full_name">
+          {{ Auth::user()->name }}
+        </p>
 
         <br>
 
@@ -218,38 +217,22 @@
 
     <!--USER DETAILS-->
     <div class="col-10 mt-3">
-      <fieldset class="px-2 bg-body">
+      <fieldset class="px-2" style="background-color: transparent;!important;" >
         <legend class="float-none w-auto mx-sm-2 text-xl-start text-center">
-          User Details
+          Some information aboout you
           <a href="#" role="button">
-            <i class="fa-solid fa-pencil" onclick="changeUserDetails()" style="color: black"></i></a>
-            <span id="user_hat"></span>
+            <i class="fa-solid fa-pencil" onclick="pushUpMessage()" style="color: black"></i></a>
+          <span id="user_hat"></span>
         </legend>
         <br>
-        <div id="user_details">
-        <p class="mx-3"><span id="description">DESCRIPTION</span></p>
-        <hr>
-        <div class="row d-flex">
-          <div class="col-6">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item d-flex">First Name: <span class="mx-1" id="first_name">FIRST_NAME</span></li>
-              <li class="list-group-item d-flex">Surname: <span class="mx-1" id="surname">SURNAME</span></li>
-              <li class="list-group-item d-flex">Age: <span class="mx-1" id="age">AGE</span></li>
-              <li class="list-group-item d-flex">Gender: <span class="mx-1" id="sex">GENDER</span></li>
-              <li class="list-group-item d-flex">Major: <span class="mx-1" id="major">MAJOR</span></li>
-            </ul>
-          </div>
+        <div id="user_details" >
+          <p class="mx-3"><span id="description">{{ Auth::user()->description }}</span></p>
+          <hr>
+          <div class="row d-flex " >
+            @yield('profile_content')
+            @yield('profile_content')
 
-          <div class="col-6">
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item d-flex">Country: <span class="mx-1" id="country">COUNTRY</span></li>
-              <li class="list-group-item d-flex">Group: <span class="mx-1" id="city">SE-2109</span></li>
-              <li class="list-group-item d-flex">Email: <span class="mx-1" id="email">EMAIL</span></li>
-              <li class="list-group-item d-flex">GitHub: <span class="mx-1" id="github">GITHUB</span></li>
-              <li class="list-group-item d-flex">Telegram: <span class="mx-1" id="telegram">TELEGRAM</span></li>
-            </ul>
           </div>
-        </div>
         </div>
 
         <br>
@@ -258,120 +241,9 @@
 
   </div>
 
-  <div class="row">
-
-    <!--LOGIN ACTIVITY-->
-    <div class="col-3">
-      <fieldset class="py-3">
-        <legend class="float-none w-auto mx-sm-2 text-xl-start text-center">
-          Login Activity
-        </legend>
-
-        <div class="text-start px-3">
-          <span class="fs-6">First access to site: </span><br>
-          <span style="color: #6c757d">Sunday, 5 September 2021, 2:38 PM</span>
-          <br><br>
-          <span class="fs-6">Last access to site: </span><br>
-          <span style="color: #6c757d">Thursday, 17 February 2022, 12:33 AM</span>
-        </div>
-
-      </fieldset>
-    </div>
-
-    <!--PROJECTS STATUS-->
-    <div class="col-9">
-      <fieldset class="py-2">
-        <legend class="float-none w-auto mx-sm-2 text-xl-start text-center">
-          Projects Status
-          <a href="#" role="button">
-            <i class="fa-solid fa-pencil" onclick="changeProjectStatus()" style="color: black"></i></a>
-          <span id="status_hat"></span>
-        </legend>
-        <br>
-        <div class="row px-3">
-
-          <!--1st project-->
-          <div class="col-4">
-            <form action="mk_profile2" method="post" id="status_form">
-              <div id="first_fieldset">
-                <div id="first_project">
-                </div>
-
-                <span id="first_progress"></span>
-
-                <div class="row">
-                  <span id="first_progress_set"></span>
-                </div>
-
-                <p class="lead fs-6 text-center"><span id="first_description"></span>
-                </p>
-              </div>
-            </form>
-          </div>
-
-          <!--2nd project-->
-          <div class="col-4">
-            <div id="second_fieldset">
-              <div id="second_project">
-              </div>
-
-              <span id="second_progress"></span>
-
-              <div class="row">
-                <span id="second_progress_set"></span>
-              </div>
-
-              <p class="lead fs-6 text-center"><span id="second_description"></span>
-              </p>
-            </div>
-          </div>
-
-          <!--3rd project-->
-          <div class="col-4">
-            <div id="third_fieldset">
-              <div id="third_project">
-              </div>
-
-              <span id="third_progress"></span>
-
-              <div class="row">
-                <span id="third_progress_set"></span>
-              </div>
-
-              <p class="lead fs-6 text-center"><span id="third_description"></span>
-              </p>
-            </div>
-          </div>
-        </div>
-      </fieldset>
-          </div>
-
-        </div>
-
-    </div>
 
 
-<!--AVA MODAL-->
-<div class="modal fade" id="avaModal" tabindex="-1">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Upload your file</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="form-group files">
-            <input type="file" class="form-control" multiple="">
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-primary" id="sendButton" onclick="sendLoadingButton()">Upload
-        </button>
-      </div>
-    </div>
-  </div>
+
 </div>
 <br>
 <br>
