@@ -15,9 +15,8 @@ html, body{
     padding-bottom: 120px;
 }
 .footer {
-    position: absolute;
-    left: 0;
-    bottom: 0;
+
+
     width: 100%;
 }
 .w-85{width: 85%;}
@@ -142,7 +141,7 @@ fieldset:hover{
     border-color: black;
 }
 .footer{
-    background-color: #373a3c;
+    background-color: red;
 }
 legend{
     color: #6c757d;
@@ -210,10 +209,10 @@ tr:last-child td{
     color: white!important;
 }
 .dark-mode fieldset{
-    border-color: #7C829E;
+    border-color: #7C829E!important;
 }
 .dark-mode fieldset:hover{
-    border-color: white;
+    border-color: white!important;
 }
 .dark-mode .dropdown-menu{
     background-color: #273049!important;

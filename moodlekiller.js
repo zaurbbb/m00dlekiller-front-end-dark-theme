@@ -1,8 +1,4 @@
-//just a text under footer
-$("#phrase").html("Support: "
-    + "<a href='https://t.me/master_without_servant' class='link-secondary' target='_blank'> <i class='fa fa-telegram '></i> " +
-    "Zavr </a>" + " & " + "<wbr/>" + "<a href='https://t.me/bioneis' class='link-secondary' target='_blank'><i class='fa fa-telegram '></i>  " +
-    "Bione </a>");
+
 
 //just head-->title text
 $("#version").html("MoodleKiller 4.0");
