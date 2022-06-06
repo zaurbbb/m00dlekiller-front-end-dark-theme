@@ -5,7 +5,8 @@ The project started with idea "how this site might look like?".
 
 So, you can see the result by these links: 
 
-Adaptive website without dark theme: https://bioneisme.github.io/m00dlekiller/index.html.
+Adaptive website without dark theme: https://bioneisme.github.io/m00dlekiller/index.html
+
 Not adaptive but with dark theme: https://zaurbbb.github.io/m00dlekiller-front-end/
 
 The site was developed in cleanly HTML code with bootstrap 5.
