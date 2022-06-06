@@ -189,9 +189,8 @@
 </div>
 
 <!--INFO-->
-<div style="">
-
-  <div class="row">
+<div style="margin: 30x; padding-top: 5%" class="ps-5">
+  <div class="row ps-5" style="width: 100%">
 
     <!--PROFILE-->
     <div class="col-2">
@@ -200,14 +199,14 @@
 
       <div class="col-12 px-2">
         <!--AVA-->
-        <a class="text-center" href="/add-image">
-          @yield('ava')
+        <a class="text-center" >
+          <img src="https://i.pinimg.com/originals/1f/de/c9/1fdec9d0c4d8754be744a44bb2d27a18.png" style="z-index: 1"  class="rounded border" height="205" width="205">
 
         </a>
         <br><br>
 
         <p class="fs-3 lead text-center" id="full_name">
-          {{ Auth::user()->name }}
+          Zaur Berdibekov
         </p>
 
         <br>
@@ -216,7 +215,7 @@
     </div>
 
     <!--USER DETAILS-->
-    <div class="col-10 mt-3">
+    <div class="col-9 mt-3">
       <fieldset class="px-2" style="background-color: transparent;!important;" >
         <legend class="float-none w-auto mx-sm-2 text-xl-start text-center">
           Some information aboout you
@@ -226,12 +225,27 @@
         </legend>
         <br>
         <div id="user_details" >
-          <p class="mx-3"><span id="description">{{ Auth::user()->description }}</span></p>
+          <p class="mx-3"><span id="description">Junior Front-End Developer</span></p>
           <hr>
           <div class="row d-flex " >
-            @yield('profile_content')
-            @yield('profile_content')
-
+            <div class="col-6" >
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex">Email: <span class="mx-1" >zaurberdibekov@mail.ru</span></li>
+                <li class="list-group-item d-flex">Major: <span class="mx-1" >Software Engineering</span></li>
+                <li class="list-group-item d-flex">Group: <span class="mx-1" >SE-2109</span></li>
+                <li class="list-group-item d-flex">Age: <span class="mx-1" >17</span></li>
+                <li class="list-group-item d-flex">Gender: <span class="mx-1" >Male</span></li>
+              </ul>
+            </div>
+            <div class="col-6" >
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex">VKontakte profile: <a href="https://vk.com/lagmazavr" class="mx-1"> click to open</a>
+                <li class="list-group-item d-flex">Instagram profile: <a href="https://www.instagram.com/lagmazavr/" class="mx-1"> click to open</a>
+                <li class="list-group-item d-flex">Telegram profile: <a href="https://t.me/lagmazavr" class="mx-1"> click to open</a>
+                <li class="list-group-item d-flex">Linkedin profile: <a href="https://www.linkedin.com/in/zaur-berdibekov-b0b921235/" class="mx-1"> click to open</a>
+                <li class="list-group-item d-flex">Github profile: <a href="https://github.com/zaurbbb" class="mx-1"> click to open</a>
+              </ul>
+            </div>
           </div>
         </div>
 
@@ -240,11 +254,12 @@
     </div>
 
   </div>
-
-
-
-
 </div>
+<br>
+<br>
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
