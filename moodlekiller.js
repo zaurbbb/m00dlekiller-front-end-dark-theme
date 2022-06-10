@@ -1,7 +1,7 @@
 
 
 //just head-->title text
-$("#version").html("MoodleKiller 4.0");
+$("#version").html("MoodleKiller 5.0");
 
 //just warning text
 $( '#wText' ).html("Warning Message" );
