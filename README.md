@@ -12,7 +12,7 @@ The project started with idea "how this site might look like?".
 
 There are two versions of this project:
 - [Adaptive version without dark theme](https://bioneisme.github.io/moodle-redesign/)
-- [Dark theme version without adaptivity](https://zaurbbb.github.io/m00dlekiller-front-end/)
+- [Dark theme version without adaptivity](https://zaurbbb.github.io/moodlekiller-front-end/)
 
 
 ## Responsibilities
