@@ -16,5 +16,5 @@ There are two versions of this project:
 
 
 ## Responsibilities
-- zaurbbb — frontend foundation (main pages, adaptivity, dark theme)
-- bioneisme — support and node.js foundation (registration and authorization)
+- (zaurbbb)[https://github.com/zaurbbb] — frontend foundation (main pages, adaptivity, dark theme)
+- (Bioneisme)[https://github.com/Bioneisme] — support and node.js foundation (registration and authorization)
