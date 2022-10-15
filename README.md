@@ -11,8 +11,8 @@ Moodlekiller is Front-End realization of site, which is used in our University (
 The project started with idea "how this site might look like?".
 
 There are two versions of this project:
-- [Adaptive version without dark theme](https://bioneisme.github.io/moodle-redesign/)
-- [Dark theme version without adaptivity](https://zaurbbb.github.io/moodlekiller-front-end/)
+- Adaptive version without dark theme: https://bioneisme.github.io/moodle-redesign/
+- Dark theme version without adaptivity: https://zaurbbb.github.io/moodlekiller-front-end/
 
 
 ## Responsibilities
